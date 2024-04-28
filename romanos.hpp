@@ -13,5 +13,19 @@ int romanos_para_decimal(char const *num_romano) {
         if (valor_atual == -1) {
             return -1;
         }
+    
+        if (i < length - 1) {
+            int valor_proximo = valor_romano(num_romano[i+1]);
+            if (valor_atual < valor_proximo) {
+                decimal += valor_proximo - valor_atual;
+                i++;
+            } else {
+                decimal += valor_atual;
+            }
+        } else {
+            decimal += valor_atual;
+        }
     }
+
+    return decimal;
 }
