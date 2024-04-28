@@ -29,3 +29,17 @@ int romanos_para_decimal(char const *num_romano) {
 
     return decimal;
 }
+
+//função principal
+int main() {
+    char num_romano[20];
+    scanf("%s", num_romano);
+    
+    int decimal = romanos_para_decimal(num_romano);
+    if (decimal == -1) {
+        printf("Número romano inválido.\n");
+    } else {
+        printf("%d\n", decimal);
+    }
+    return 0;
+}
