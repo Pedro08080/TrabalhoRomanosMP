@@ -3,7 +3,7 @@
 #include "romanos.hpp"
 
 
-TEST_CASE( "Numeros romanos - algarismos �nicos", "[romanos]" ) {
+TEST_CASE( "Numeros romanos - algarismos unicos", "[romanos]" ) {
     REQUIRE( romanos_para_decimal("I") == 1 );
     
     REQUIRE( romanos_para_decimal("V") == 5 );
@@ -22,11 +22,33 @@ TEST_CASE( "Numeros romanos - algarismos �nicos", "[romanos]" ) {
 
 
 
-TEST_CASE( "Numeros romanos - algarismos inv�lidos", "[romanos]" ) {
+TEST_CASE( "Algarismos romanos inválidos", "[romanos]" ) {
     REQUIRE( romanos_para_decimal("G") == -1 );
-    
+
     REQUIRE( romanos_para_decimal("i") == -1 );
 
+    REQUIRE( romanos_para_decimal("IVX") == -1 );
+
+    REQUIRE( romanos_para_decimal("VX") == -1 );
+
+    REQUIRE( romanos_para_decimal("IL") == -1 );
+
+    REQUIRE( romanos_para_decimal("IC") == -1 );
+
+    REQUIRE( romanos_para_decimal("ID") == -1 );
+
+    REQUIRE( romanos_para_decimal("IM") == -1 );
+
+    REQUIRE( romanos_para_decimal("XD") == -1 );
+
+    REQUIRE( romanos_para_decimal("XM") == -1 );
+
+    REQUIRE( romanos_para_decimal("VV") == -1 );
+
+    REQUIRE( romanos_para_decimal("LL") == -1 );
+
+    REQUIRE( romanos_para_decimal("DD") == -1 );
+
+    REQUIRE( romanos_para_decimal("MMMM") == -1 );
     
 }
- 
